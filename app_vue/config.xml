@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml referencia: https://build.phonegap.com/docs/config-xml 
+
+Los primeros dos atributos de la etiqueta widget, NO los tocamos (xmlns xmlns:gap). El atributo id, especifica un identificador único para la aplicación,
+esto es obligatorio si quisiéramos subir la app al Play Store o App Store y será el nombre de la carpeta al instalarse en el dispositivo. El formato DEBE ser el de una url invertida.
+    
+El atriburo version, es el número de versión, que va en el siguiente formato: MAJOR.MINOR.PATCH, donde:
+    - Major: Son cambios de versión importantes que rompen compatibilidad de la app hacia atrás (versiones anteriores).
+    - Minor: Son cambios que no rompen la compatibilidad hacia atrás.
+    - Patch: Son arreglos de errores, agregados pequeños o parches del código. 
+-->
+            
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.davinci.TodoCamisetas.www"
+        version   = "0.2.0">
+	
+    <!-- Esta etiqueta define el NOMBRE de la app (con él va a figurar tanto en el store como en el dispositivo). -->
+    
+    <name>Todo Camisetas</name>
+
+    <!-- Descripción de la app para el Play Store. -->
+    
+    <description>
+        La indumentaria de tu club favorito al mejor precio. Encontrá las camisetas de clubes locales, europeos y de selecciones de múltiples países a ofertas increíbles. Nueva versión 0.2 incluye herramientas que mantendrán
+		funcionando la app en caso de que el dispositivo pierda la conexión a internet.
+    </description>
+
+    <!-- Los datos del autor para el PlayStore. -->
+    
+    <author href="http://www.davinci.edu.ar" email="juan.allende@davinci.edu.ar">
+        	Juan Pablo Allende - Escuela Da Vinci
+    </author>
+	
+	<!-- Plataformas habilitadas para empaquetar en Phonegap Build. -->
+	
+	<platform name="ios" />
+	<platform name="android" />
+	<platform name="winphone" />
+	
+	
+    <!-- Preference: son las preferencias para nuestra app y permissions son los permisos que pide la app al dispositivo al instalarse. 
+	El valor none indica que, por defecto, la app no pida permisos que no necesite de inmediato, salvo el de INTERNET que requiere siempre Phonegap. 
+	Al margen de éstos, se sumarán los permisos necesarios para los plugins que requiera el desarrollo (incluidos más abajo). -->
+    
+    <preference name="permissions" value="none"/>
+	
+    <preference name="orientation" value="portrait" /> 
+	<!-- Valores: portrait / landscape / default (por defecto ambos habilitados). -->
+	
+    <preference name="target-device" value="universal" /> 
+	<!-- Valores: phone / tablet / universal. -->
+	
+    <preference name="fullscreen" value="false" /> 
+	<!-- Mostrar / ocultar la barra de estado en la parte superior de la pantalla. Valores: true / false. -->    
+   
+    <preference name="android-installLocation" value="auto" /> 
+	<!-- ANDROID: lugar de instalación, Auto: configuración por default en el dispositivo / InternalOnly: exclusivamente en la memoria interna del dispositivo / 
+	PreferExternal: preferentemente en la tarjeta de memoria. -->
+	
+	<preference name="showSplashScreenSpinner" value="false" /> 
+	<!-- ANDROID: mostrar / ocultar el icono de loading cuando se carga la app. -->
+
+	<preference name="splashScreenDelay" value="5000" />
+	<!-- Tiempo de espera de la pantalla de presentación independientemente del tiempo de carga necesario. -->
+    
+    <preference name="StatusBarBackgroundColor" value="#6699CC" />
+    <!-- IOS / ANDROID: color de la barra de estado. -->
+    	
+    <!-- Inclusión de plugins de Cordova. Los plugins son librerías que agregamos a nuestra aplicación para poder acceder a aspectos internos del dispositivo desde Javascript.
+	Solo debemos incluir aquellos que necesitemos para el desarrollo, el resto no,
+	ya que van a solicitar permisos por demás que pueden generar desconfianza en el usuario al momento de instalar la app en su dispositivo. -->
+    
+	<plugin name="cordova-plugin-geolocation" source="npm" />
+	<plugin name="cordova-plugin-statusbar" source="npm"/>
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	
+	<!--Icono de la aplicación para cada tipo de resolución y plataforma (descomentar SOLO el que se usa y respetar la ruta donde ubicar el archivo:
+	res/icon/android... el nombre del archivo puede variar). -->
+	
+    <icon src="res/icon/android/icon_ldpi.png" 
+		gap:platform="android" gap:density="ldpi" />
+    <icon src="res/icon/android/icon_mdpi.png" 
+		gap:platform="android" gap:density="mdpi" />
+    <icon src="res/icon/android/icon_hdpi.png" 
+		gap:platform="android" gap:density="hdpi" />
+    <icon src="res/icon/android/icon_xhdpi.png" 
+		gap:platform="android" gap:density="xhdpi" />
+   
+    <!--
+    <icon src="res/icon/ios/icon-57.png" 
+		gap:platform="ios" width="57" height="57" />
+    <icon src="res/icon/ios/icon-72.png" 
+		gap:platform="ios" width="72" height="72" />
+    <icon src="res/icon/ios/icon-57-2x.png" 
+		gap:platform="ios" width="114" height="114" />
+    <icon src="res/icon/ios/icon-72-2x.png" 
+		gap:platform="ios" width="144" height="144" />
+		
+    <icon src="res/icon/windows-phone/icon-48.png" 
+		gap:platform="winphone" />
+    <icon src="res/icon/windows-phone/icon-173.png" 
+		gap:platform="winphone" gap:role="background" />
+	-->
+		
+	<!-- SPLASH SCREEN: Al igual que para los iconos, se debe descomentar SOLO si se incluye la imagen de ese tamaño, para esa resolución de pantalla
+	y respetar la ruta de carpetas (ver los tamaños para cada resolución de Android). -->
+    
+	<gap:splash src="res/screen/android/screen_ldpi.png" 
+		gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="res/screen/android/screen_mdpi.png" 
+		gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="res/screen/android/screen_hdpi.png" 
+		gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="res/screen/android/screen_xhdpi.png" 
+		gap:platform="android" gap:density="xhdpi" />
+	
+	<!--	
+    <gap:splash src="res/screen/ios/screen-iphone-portrait.png" 
+		gap:platform="ios" width="320" height="480" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" 
+		gap:platform="ios" width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-ipad-portrait.png" 
+		gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="res/screen/ios/screen-ipad-landscape.png" 
+		gap:platform="ios" width="1024" height="768" />
+    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" 
+		gap:platform="winphone" />
+	-->
+
+    <!-- Acceso a dominios externos:
+	
+	- EN BLANCO: niega el acceso a todos los recursos externos. 
+	
+	<access /> 	
+	
+	ASTERISCO: permite el acceso a los recursos externos de cualquier origen.	-->
+	
+	<access origin="*" /> 	
+	
+	<!-- - También se pueden permitir dominios específicos (o sus IP correspondientes si se conocen).
+	Por ejemplo: 
+    
+	    # acceso a google.com (https, servidor seguro)
+        <access origin="https://google.com" />						
+        <access origin="http://127.0.0.1*"/> 
+	-->
+	
+    <!-- Listas blancas de dominio es un modelo de seguridad que controla el acceso a dominios externos sobre los cuales la aplicación no tiene ningún control.
+	Cordova ofrece una política de seguridad configurable para definir los sitios externos 	que pueden accederse. 
+	De forma predeterminada, las aplicaciones están configuradas para permitir el acceso a cualquier sitio.
+    Whitelist configuración: https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
+    
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

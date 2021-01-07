@@ -1,0 +1,498 @@
+/*Estilos generales*/
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body {
+	font-family:"MS Reference Sans Serif"
+}
+header {
+	position:relative;
+	z-index:2;
+	height:80px;
+	max-width:100%;
+}
+h1 {
+	font-size:0;
+	background:url(img/logo_md.png) no-repeat center center;
+	width:246px;
+	height:50px;
+	z-index:2;
+	margin-left:auto;
+	margin-right:auto;
+	position:absolute;
+	top:1em;
+	left:18%;
+	right:18%;
+	
+}
+.nav-item {
+    flex: 1;
+    padding: 0;
+	color:rgb(102,153,204);
+	font-size:0;
+}
+
+.nav-link {
+    background-color: none;
+    text-align: center;
+	color:rgb(102,153,204);
+	font-size:0;
+}
+.navbar {
+    padding: 0;
+    background:white;
+}
+
+.navbar-nav {
+    width: 100%;
+    background: none;
+    flex-wrap: nowrap;
+}
+[data-role="page"] {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#uno {
+	display:block;
+	margin-bottom:2em;
+}
+[data-role="page"]:target {
+    display: block;
+}
+#dos:target ~ #uno {
+    display: none;
+}
+#tres:target ~ #uno {
+    display: none;
+}
+#cuatro:target ~ #uno {
+    display: none;
+}
+[data-role="page"]:target ~ nav .nav-item img {
+    opacity: .5;
+}
+#uno:target ~ nav .nav-item:nth-of-type(1) a img {
+    opacity: 1;
+}
+
+#dos:target ~ nav .nav-item:nth-of-type(2) a img {
+    opacity: 1;
+}
+
+#tres:target ~ nav .nav-item:nth-of-type(3) a img {
+    opacity: 1;
+}
+#cuatro:target ~ nav .nav-item:nth-of-type(4) a img {
+    opacity: 1;
+}
+/*Estilos página home*/
+#uno {
+	margin-bottom:4em;
+}
+#uno figure {
+	margin-top:4em;
+}
+#uno h2 {
+	color:rgb(102,153,204);
+	font-size:1.3em;
+	margin-bottom:1em;
+}
+#uno h3 {
+	font-size:.85em;
+	color:rgb(102,153,204);
+	margin-bottom:1em;
+}
+#uno div {
+	width:100%;
+}
+nav ul li a img {
+    height: 1.25em;
+    opacity: .5;
+}
+nav .nav-item:nth-of-type(1) img {
+    opacity: 1;
+}
+/*Estilos página productos*/
+header ~ #dos:target{
+	background-color: rgb(102,153,204);
+}
+#header {
+	margin-top:4em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2em 2em;
+	background-color: rgb(102,153,204);
+}
+
+#header > h2 {
+	font-size: 1.6em;
+	line-height: 1.5;
+	text-align: center;
+	color:white;	
+}
+#header > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#header > div > p {
+	font-size: 1em;
+	line-height: 1.5;
+	text-align: left;
+	color: white;	
+}
+
+#header > div > p > span {
+	font-size: 1em;
+}
+
+#header > div > button {
+	margin-top: .5em;
+	border: 1px solid #1A4A5E;
+	padding: 0 .5em;
+	background: white;
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: left;
+	color: rgb(102,153,204);
+	cursor: pointer;
+}
+
+#header > div > button:hover {
+	border: 1px solid #D4EAF3;
+	background: #1A4A5E;
+	color: #D4EAF3;	
+}
+
+/**	Main */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 4em;
+	padding: 2em 2em;
+	background-color: #D4EAF3;
+}
+
+main section {
+	margin-bottom: 4em;
+}
+main section h3 {
+	font-size:1.3em;
+}
+#categorias {
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+}
+main section h2 {
+	margin: .4em;
+	font-size: 1.8em;
+	line-height: 1.5;
+	text-align: center;
+	color: #1A4A5E;
+}
+#productos {
+	display: flex;
+	margin-top:1em;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+#productos > div {
+	display: inline-block;
+	margin: 1em;
+	width: 80%;
+	padding: 1em;
+	background-color: white;
+}
+
+#productos > div > img {
+	width: 25%;
+}
+
+#productos > div > div {
+	width: 70%;
+}
+
+#productos > div h3 {
+	font-size: 1.2em;
+	text-align: left;
+	color: rgb(102,153,204);
+	margin-right:0.5em;
+	display:inline;
+}
+
+#productos > div p {
+	font-size: .9em;
+	text-align: left;
+	color: rgb(102,153,204);
+	margin-right:0.5em;	
+}
+
+#productos > div button {
+	width:100%;
+	border: 1px solid #D4EAF3;
+	padding: 0 .5em;
+	background: rgb(102,153,204);
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	margin-right:0.5em;
+}
+
+#productos > div button:hover {
+	border: 1px solid #1A4A5E;
+	background: #D4EAF3;
+	color: #1A4A5E;	
+}
+
+.modal {
+	position: fixed;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow:auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.9);
+}
+
+.modal > a {
+	position: fixed;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 1em;
+	right: 1em;
+	border-radius: 1em;
+	width: 2em;
+	height: 2em;
+	background-color: rgba(255,255,255,.9);
+	font-size: 1em;
+	text-align: center;
+	color: rgb(102,153,204);#1A4A5E;
+	text-decoration: none;
+}
+
+.modal > a:hover {
+	background-color: #1A4A5E;
+	color: rgba(255,255,255,.9);
+}
+
+.modal > div {
+	display: flex;
+	z-index:3;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 80%;
+	padding: 1em;
+	background-color: #FFF;
+}
+
+.modal > div > img {
+	width:40%;
+	max-width:60%;
+}
+
+.modal h3 {
+	margin-top:1em;
+	font-size: 1.4em;
+	line-height: 1.5;
+	font-weight: 400;
+	text-align: left;
+	color: rgb(102,153,204);
+}
+.modal h4 {
+	margin-top:1em;
+	font-size: 1.2em;
+	line-height: 1.5;
+	font-weight: 400;
+	text-align: left;
+	color: rgb(102,153,204);
+}
+
+.modal p {
+	font-size: 1em;
+	line-height: 1.5;
+	text-align: left;
+	color: rgb(102,153,204);
+}
+
+.modal span {
+	font-size: .85em;
+}
+
+.modal button {
+	margin-top: 1em;
+	border: 1px solid #D4EAF3;
+	width: 100%;
+	padding: 0 .5em;
+	background: rgb(102,153,204);
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+.modal button:hover {
+	border: 1px solid #1A4A5E;
+	background: #D4EAF3;
+	color: #1A4A5E;	
+}
+
+.modal ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.modal li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: left;
+	color: rgb(102,153,204);
+}
+
+.modal li a {
+	font-size: .9em;
+	line-height: 1.5;
+	text-align: left;
+	color: rgb(102,153,204);
+}
+.modal form {
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:8em;
+	overflow:scroll;
+	width:80%;
+	align-items:center;
+	padding: 1em;
+	background-color: #FFF;	
+}
+#dos form h2 {
+	color:rgb(102,153,204);
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:2em;
+	font-size:1.5em
+}
+form label {
+	font-size:1em;
+	color:rgb(102,153,204);
+	margin-bottom:1.2em;
+	margin-top:1.2em;
+	margin-left:1em;
+	margin-right:1em;
+}
+label {
+	font-size:1.1em;
+}
+[type="reset"] {
+	margin-top:1em;
+	margin-bottom:1em;
+}
+[type="button"] {
+	margin-top: 1em;
+	width: 100%;
+	border: 1px solid #D4EAF3;
+	padding: 0 .5em;
+	background: rgb(102,153,204);
+	font-size: 1.1em;
+	line-height: 1.5;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	margin-right:0.5em;
+}
+[type="radio"] {
+	display:inline-block;
+}
+.boton_categoria {
+	margin-top: 1em;
+	margin-right:1em;
+	border: 1px solid #D4EAF3;
+	padding: 0 .5em;
+	background: rgb(102,153,204);
+	font-size: 1.1em;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+/*Estilos página info*/
+#tres {
+	width:95%;
+	margin-top:4em;
+	margin-bottom:4em;
+}
+#tres h2 {
+	font-size:1.5em;
+	color:rgb(102,153,204);
+	text-align:center;
+	margin-bottom:1em;
+}
+#tres p {
+	font-size:1em;
+	color:rgb(102,153,204);
+	margin-bottom:1em;
+	margin-top:1em;
+}
+#tres li {
+	list-style-type:none;
+	font-size:1em;
+	color:rgb(102,153,204);
+	margin-bottom:1em;
+	margin-top:1em;
+}
+#tres img {
+	margin-bottom:2em;
+	margin-top:1em;
+}
+@media (min-width: 576px) {
+	#uno h2 {
+		font-size:1.6em;
+	}
+	#uno h3 {
+		font-size:1.2em;
+	}
+}
+/*Estilos página formulario*/
+
+#cuatro form h2 {
+	color:rgb(102,153,204);
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:1.5em
+}
+#cuatro form > input:last-child {
+	background:rgb(102,153,204);
+	color:white;
+}
